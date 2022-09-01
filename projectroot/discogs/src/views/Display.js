@@ -6,13 +6,13 @@ import Container from 'react-bootstrap/Container'
 import MyCard from '../components/MyCard'
 
 
-function Display({ props }) {
-console.log('props :>> ', props);
+function Display({ records }) {
+console.log('props :>> ', records);
   return (
     <div>
 <Container >
-  <Row>
-      {props.map((ele, i) => {
+  <Row className='row'>
+      {records.map((ele, i) => {
         return (
           <Col sm={3} md={2} key={i}>
             

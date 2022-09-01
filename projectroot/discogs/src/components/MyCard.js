@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 function MyCard({ele}) {
   return (
   
-    <Card >
+    <Card className='col' >
       {/* <Card xs={12} sm={6} md={4} lg={3}> */}
       
         <img src={ele.cover_image} alt='cover'></img>

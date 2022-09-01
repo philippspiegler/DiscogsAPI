@@ -3,6 +3,7 @@ import Display from './views/Display'
 import Search from './views/Search'
 
 
+
 function Data() {
 
   const [records, setRecords] = useState([])
@@ -21,17 +22,19 @@ function Data() {
   }, [])
 
 
+  const searchInput = () => {
+    records.map()
+  }
 
   return (
     <div>
-      <Display props={records} />
-      <Search props={records}/>
+      <Display records={records} />
+      <Search records={records}/>
     </div>
   )
 }
 
 export default Data
-
 
 
 
