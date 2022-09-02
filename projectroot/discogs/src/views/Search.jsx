@@ -5,14 +5,10 @@ import './views.css'
 
 function Search({ handleSearch, searchInput, fetchedData }) {
 
-    
-
-    
-
     return (
         <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control onChange={e => handleSearch(e)} type="search" placeholder="search record or artist" value={searchInput} />
+            <Form.Group className="m-3" controlId="formBasicEmail">
+                <Form.Control onKeyDown={fetchedData} onChange={e => handleSearch(e)} type="search" placeholder="search record or artist" value={searchInput} />
                 <Button onClick={fetchedData}>Search</Button>
             </Form.Group>
         </Form>
