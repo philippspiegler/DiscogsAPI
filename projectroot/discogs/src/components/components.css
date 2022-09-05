@@ -8,7 +8,7 @@ html, body {
 
 
 .searchButton {
- border: 2px solid;
+ 
 }
 
 .navbar {
@@ -28,15 +28,17 @@ html, body {
 }
 
 .loginContainer {
-    margin-top: 2em;
     background-color: rgb(160, 112, 167);
-    
 }
 
 .loginTitle {
     display: flex;
     justify-content: center;
+    background-color: rgb(160, 112, 167);
+    width: 100%;
+    padding-top: 2em;
 }
+
 
 .loginForm {
     background-color: #fff;
@@ -45,28 +47,35 @@ html, body {
     flex-direction: row;
     margin: auto;
     margin-bottom: 0.75em;
-
    
 }
 
-@media only screen and (max-width: 768px) {
-    .form {display:flex;
-        flex-direction: column;}
-  }
 
 .loginInput {
     margin-right: 1em;
-   
 }
 
 .link {
     display: flex;
     justify-content: center;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .link:hover {
     color: gray;
 }
+
+.homeLink {
+    
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+    color: white;
+}
+
+.homeLink:hover {
+    color: lightgray;
+}
+
 

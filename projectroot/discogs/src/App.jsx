@@ -1,15 +1,17 @@
-import React from "react";
-import "./App.css";
-import Data from "./Data";
-import { Routes, Route, Link } from "react-router-dom";
-import Search from "./views/Search";
+import React from "react"
+import "./App.css"
+import Data from "./Data"
+import Header from "./components/Header"
 
 function App() {
   return (
+    
     <div className="App">
+      <Header />
       <Data />
     </div>
-  );
+    
+  )
 }
 
 export default App;

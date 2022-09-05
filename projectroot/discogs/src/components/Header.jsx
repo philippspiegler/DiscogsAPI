@@ -1,11 +1,14 @@
-import { fontFamily } from '@mui/system'
 import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
-import './views.css'
+import {Link} from "react-router-dom"
+import './components.css'
 
 function Header() {
   return (
+    <>
     <Navbar className='navbar'>Records API</Navbar>
+    <Link className='link navbar' to='/login'>Login</Link>
+    </>
   )
 }
 
