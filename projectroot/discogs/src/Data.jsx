@@ -12,6 +12,9 @@ function Data() {
   const handleSearch = (e) => {
     // console.log('e.target.value :>> ', e.target.value)
     setSearchInput(e.target.value)
+    if(e.key !== 13){
+      
+    }
   }
 
   // fetch

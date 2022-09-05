@@ -5,7 +5,7 @@ import './components.css'
 
 function Search({ handleSearch, searchInput, fetchedData }) {
 
-    return (
+     return (
         <Form>
             <Form.Group className="m-3" controlId="formBasicEmail">
                 <Form.Control className='searchInput' onChange={e => handleSearch(e)} type='search' placeholder='record or artist' value={searchInput} />
@@ -20,4 +20,6 @@ function Search({ handleSearch, searchInput, fetchedData }) {
 export default Search
 
 
+           
+              
 
