@@ -5,7 +5,7 @@ import MyCard from '../components/MyCard'
 
 
 function Display({ records }) {
-  console.log("props :>> ", records);
+  // console.log("props :>> ", records);
   return (
     <Container>
       <Row>
