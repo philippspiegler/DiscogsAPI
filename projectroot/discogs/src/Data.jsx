@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import Display from "./views/Display"
 import Search from "./components/Search"
+import Nodal from './components/Nodal'
 
 
 function Data() {
@@ -8,14 +9,6 @@ function Data() {
   const [searchInput, setSearchInput] = useState('')
   const url = `https://api.discogs.com/database/search?q=${searchInput}&token=hDhYBDtJlXtHOWWJPjfSpwYKCHAJjlkHBJOxHlkf`
   console.log(console.log('records in Data :>> ', records))
-
-  const handleSearch = (e) => {
-    // console.log('e.target.value :>> ', e.target.value)
-    setSearchInput(e.target.value)
-    if(e.key !== 13){
-      
-    }
-  }
 
   // fetch
   const fetchedData = () => {
@@ -28,6 +21,12 @@ function Data() {
       })
   }
 
+  //search
+  const handleSearch = (e) => {
+    setSearchInput(e.target.value)
+  }
+
+
   useEffect(() => {
     fetchedData(url)
   } )
@@ -36,7 +35,7 @@ function Data() {
   return (
     <div>
       <Search handleSearch={handleSearch} searchInput={searchInput} fetchedData={fetchedData} />
-      <Display props={records} />
+      <Display records={records}/>
     </div>
   );
 }

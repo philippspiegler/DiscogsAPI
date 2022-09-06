@@ -5,6 +5,7 @@ import './components.css'
 
 function Search({ handleSearch, searchInput, fetchedData }) {
 
+
      return (
         <Form>
             <Form.Group className="m-3" controlId="formBasicEmail">

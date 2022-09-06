@@ -7,9 +7,18 @@ html, body {
 }
 
 
-.searchButton {
- 
+.modalButton {
+ background-color: lightslategray;
+ border-color: lightslategray;
+ border-top-left-radius: 0%;
+ border-top-right-radius: 0%;
 }
+
+.modalButton:hover {
+   background-color: rgb(160, 112, 167);
+   border-color: rgb(160, 112, 167);
+}
+
 
 .navbar {
     background-color: rgb(160, 112, 167);
@@ -63,14 +72,14 @@ html, body {
 }
 
 .link:hover {
-    color: gray;
+    color: lightcoral;
 }
 
 .homeLink {
     
-        display: flex;
-        justify-content: center;
-        text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
     color: white;
 }
 
