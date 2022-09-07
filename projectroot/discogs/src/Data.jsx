@@ -6,7 +6,7 @@ import Search from "./components/Search"
 
 function Data() {
   const [records, setRecords] = useState([])
-  const [searchInput, setSearchInput] = useState()
+  const [searchInput, setSearchInput] = useState('Alice Cooper')
   const url = `https://api.discogs.com/database/search?q=${searchInput}&token=hDhYBDtJlXtHOWWJPjfSpwYKCHAJjlkHBJOxHlkf`
   console.log(console.log('records in Data :>> ', records))
   
@@ -29,7 +29,7 @@ function Data() {
   
   useEffect(() => {
     fetchedData(url)
-  } )
+  }, [] )
 
 
 

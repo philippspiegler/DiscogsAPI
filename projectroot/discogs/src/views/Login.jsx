@@ -10,7 +10,7 @@ function Login(){
     <Form className='form'>
             <Form.Group className="loginForm">
                 <Form.Control className='loginInput' placeholder='login creds'></Form.Control>
-                <Button className='btn btn-secondary'>Login</Button>
+                <Button className='btn btn-secondary loginButton'>Login</Button>
             </Form.Group>
         </Form>
     <Link className='homeLink' to="/">Home</Link>
