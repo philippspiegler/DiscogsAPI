@@ -4,14 +4,14 @@ import Search from "./components/Search"
 
 
 
-function Data() {
+function Fetch() {
   const [records, setRecords] = useState([])
   const [searchInput, setSearchInput] = useState('Alice Cooper')
   const url = `https://api.discogs.com/database/search?q=${searchInput}&token=hDhYBDtJlXtHOWWJPjfSpwYKCHAJjlkHBJOxHlkf`
   console.log(console.log('records in Data :>> ', records))
   
   // fetch
-  const fetchedData = () => {
+  const fetchedData = async () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -19,6 +19,7 @@ function Data() {
         setRecords(data.results);
         console.log('results :>> ', data.results);
       })
+      .catch(err => console.log(err))
     }
     
   //search
@@ -35,10 +36,10 @@ function Data() {
 
   return (
     <div>
-      <Search handleSearch={handleSearch} searchInput={searchInput} fetchedData={fetchedData} />
+      <Search handleSearch={handleSearch} searchInput={searchInput} fetchedData={fetchedData}/>
       <Display records={records}/>
     </div>
   );
 }
 
-export default Data;
+export default Fetch;

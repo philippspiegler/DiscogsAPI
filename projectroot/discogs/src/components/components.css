@@ -6,6 +6,7 @@ html, body {
     background-color: white;
 }
 
+/* Modal */
 
 .modalButton {
  background-color: lightslategray;
@@ -26,13 +27,25 @@ html, body {
     justify-content: space-around;
 }
 
+
+
 .searchInput {
    
     width: 50vw;
     margin: auto;
     display: inline-block;
     background-color: lightgray;
+    border-radius: 5%;
+    border: 2px solid lightslategray;
+    
+}
+
+.searchButton {
+    background-color: lightcoral;
+    height: 52px;
     border-radius: 0%;
+    border: 2px solid lightslategray;
+    
 }
 
 .loginContainer {
@@ -63,6 +76,8 @@ html, body {
     margin-right: 1em;
 }
 
+/* Navbar */
+
 .link {
     display: flex;
     justify-content: center;
@@ -71,8 +86,14 @@ html, body {
 }
 
 .link:hover {
-    color: lightcoral;
+    color: white;
 }
+.link-details {
+    text-decoration: none;
+    color: #000;
+}
+
+/* All Home Buttons in components folder */
 
 .homeLink {
     
@@ -85,5 +106,52 @@ html, body {
 .homeLink:hover {
     color: lightgray;
 }
+
+.div-details {
+    margin: 1em 2em;
+    padding: 0.5em;
+    background-color: lightgray;
+    border: 2px solid lightslategray;
+} 
+
+
+
+.button-link-details {
+    border: none;
+    border-radius: 0%;
+    background-color: rgb(160, 112, 167);
+    color: white;
+    
+     
+}
+
+.button-link-details:hover {
+    background-color: rgb(160, 112, 167);
+    color: white;
+}
+
+.h2-details {
+    background-color: rgb(160, 112, 167);
+    padding: 0.2em;
+}
+
+/* the select below navbar */
+
+.select-filter {
+    width: 20vw;
+    margin: auto;
+    margin-top: 0.5em;
+    background-color: lightgray;
+    border: 2px solid lightslategray;
+    margin-bottom: 2em;
+}
+
+@media only screen and (max-width: 768px){
+    .select-filter {
+        width: 40vw;
+    }
+}
+
+
 
 

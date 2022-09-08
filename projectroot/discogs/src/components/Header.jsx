@@ -6,8 +6,10 @@ import './components.css'
 function Header() {
   return (
     <>
-    <Navbar className='navbar'>Records API</Navbar>
-    <Link className='link navbar' to='/login'>Login</Link>
+    <Navbar> <div className='navbar'>Records API</div>
+    <Link className='link' to='/login'>Login</Link>
+    <Link className='link' to='/register'>Register</Link>
+    </Navbar>
     </>
   )
 }

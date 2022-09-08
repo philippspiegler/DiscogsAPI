@@ -13,7 +13,6 @@ function MyCard({ ele }) {
         <img src={ele.cover_image} alt="cover"></img>
         {ele.title ? <p>{ele.title}</p> : <p>No title info</p>}
        <MyModal ele={ele}></MyModal>
-       {/* <Details ele={ele}></Details> */}
        <Link className="link" to={`/details/${ele.title}`} state={ele}>Even More Info</Link>
       </Card>
     </Col>

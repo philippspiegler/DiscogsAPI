@@ -1,6 +1,6 @@
 import React from "react"
 import "./App.css"
-import Data from "./Data"
+import Fetch from "./Fetch"
 import Header from "./components/Header"
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     
     <div className="App">
       <Header />
-      <Data />
+      <Fetch />
     </div>
     
   )

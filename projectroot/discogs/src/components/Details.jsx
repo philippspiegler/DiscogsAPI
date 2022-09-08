@@ -1,21 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Link, useLocation} from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 import './components.css'
 
 function Details () {
+
 const location = useLocation()
-console.log('location :>> ', location);
+console.log('location Details :>> ', location);
 const ele = location.state
 return (
     <>
-    <div> 
-        {ele.title && <h2>{ele.title}</h2>}
-    {ele.genre ? <p>Genre: <b>{ele.genre}</b></p> : <p>no genre info</p>}
-    {ele.format ? <p>Format: <b>{ele.format[0]}</b></p> : <p>no format info</p>}
-    {ele.year  ? <p>Year: <b>{ele.year}</b></p> : <p>no date info</p>}
-    {ele.country  ? <p>Country: <b>{ele.country}</b></p> : <p>no country info</p>}
+    <div className="div-details"> 
+    {ele.title && <h2 className="h2-details">{ele.title}</h2>}
+    {ele.label ? <p>Label: <b>{ele.label[0]}</b></p> : <p>no label info</p>}
+    {ele.style ? <p>Style: <b>{ele.style[0]}</b></p> : <p>no style info</p>}
+    {ele.master_id  ? <p>Master ID: <b>{ele.master_id}</b></p> : <p>no id info</p>}
+    <Button className="btn button-link-details"><Link className="link-details" to="/">Home</Link></Button>
     </div>
-    <Link className="link" to="/">Home</Link>
     </>
   )
 }
