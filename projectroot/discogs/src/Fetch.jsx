@@ -8,7 +8,7 @@ function Fetch() {
   const [records, setRecords] = useState([])
   const [searchInput, setSearchInput] = useState('Alice Cooper')
   const url = `https://api.discogs.com/database/search?q=${searchInput}&token=hDhYBDtJlXtHOWWJPjfSpwYKCHAJjlkHBJOxHlkf`
-  console.log(console.log('records in Data :>> ', records))
+  console.log(console.log('records in Fetch :>> ', records))
   
   // fetch
   const fetchedData = async () => {
@@ -16,7 +16,7 @@ function Fetch() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setRecords(data.results);
+        setRecords(data.results)
         console.log('results :>> ', data.results);
       })
       .catch(err => console.log(err))
@@ -27,19 +27,21 @@ function Fetch() {
   setSearchInput(e.target.value)
   }
 
+
+
+
   
   useEffect(() => {
     fetchedData(url)
   }, [] )
 
 
-
   return (
     <div>
-      <Search handleSearch={handleSearch} searchInput={searchInput} fetchedData={fetchedData}/>
+      <Search handleSearch={handleSearch} searchInput={searchInput} fetchedData={fetchedData} records={records}/>
       <Display records={records}/>
     </div>
-  );
+  )
 }
 
-export default Fetch;
+export default Fetch
