@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
 import Display from "./views/Display"
 import Search from "./components/Search"
-
+import {useTheme, useThemeUpdate} from './context/ThemeContext'
 
 
 function Fetch() {
   const [records, setRecords] = useState([])
+  const [selected, setSelected] = useState('')
   const [searchInput, setSearchInput] = useState('Alice Cooper')
   const url = `https://api.discogs.com/database/search?q=${searchInput}&token=hDhYBDtJlXtHOWWJPjfSpwYKCHAJjlkHBJOxHlkf`
   console.log(console.log('records in Fetch :>> ', records))
@@ -27,21 +28,30 @@ function Fetch() {
   setSearchInput(e.target.value)
   }
 
-
-
+  const handleSelect = (e) =>{
+    console.log('e.target.value from handleSelect :>> ', e.target.value)
+    setSelected(e.target.value)
+  }
 
   
   useEffect(() => {
     fetchedData(url)
   }, [] )
 
+  const darkTheme = useTheme()
+  const toggleTheme = useThemeUpdate()
+  const themeStyles = {
+    backgroundColor : darkTheme ? '#333' : '#CCC',
+    color: darkTheme ? '#CCC' : '#333'
+  }
 
   return (
-    <div>
-      <Search handleSearch={handleSearch} searchInput={searchInput} fetchedData={fetchedData} records={records}/>
+    <>
+    <div style={themeStyles}>
+      <Search handleSearch={handleSearch} searchInput={searchInput} fetchedData={fetchedData} handleSelect={handleSelect} selected={selected} records={records}/>
       <Display records={records}/>
     </div>
-  )
+    </>)
 }
 
 export default Fetch

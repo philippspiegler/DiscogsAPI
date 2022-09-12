@@ -1,13 +1,9 @@
-import React, {useState, useEffect} from 'react'
 import { Button } from 'react-bootstrap'
-import Form from 'react-bootstrap/Form'
-import {Row, Col }from 'react-bootstrap'
+import {Form, FormSelect} from 'react-bootstrap'
 import './components.css'
 
-function Search({ handleSearch, searchInput, fetchedData, records }) {
-    
-     
-
+function Search({ handleSearch, searchInput, fetchedData, records, handleSelect, selected}) { 
+  // console.log('records :>> ', records);
 
     return (
         <>
@@ -16,6 +12,18 @@ function Search({ handleSearch, searchInput, fetchedData, records }) {
                 <Form.Control className='searchInput' onChange={e => handleSearch(e)} type='search' placeholder='record or artist' value={searchInput} />
                 <Button className='searchButton' onClick={fetchedData}>Search</Button>
             </Form.Group>
+        </Form> 
+      
+        <Form>
+          <FormSelect className='select-filter' onChange={e => handleSelect(e)} >
+            {/* <option>country:</option> */}
+            
+            <option value={selected}>  {records.map(ele => {
+              // console.log(ele.country)
+              let land = ele.country
+              return land
+            })}</option>
+          </FormSelect>
         </Form>
       </>
     )
