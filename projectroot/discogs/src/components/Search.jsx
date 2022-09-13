@@ -4,7 +4,10 @@ import './components.css'
 
 function Search({ handleSearch, searchInput, fetchedData, records, handleSelect, selected}) { 
   // console.log('records :>> ', records);
-
+  const removeDuplicates = () => {
+    const uniqueValues = records.filter(ele => ele.country)
+    return uniqueValues
+  }
     return (
         <>
         <Form>
@@ -16,13 +19,12 @@ function Search({ handleSearch, searchInput, fetchedData, records, handleSelect,
       
         <Form>
           <FormSelect className='select-filter' onChange={e => handleSelect(e)} >
-            {/* <option>country:</option> */}
             
-            <option value={selected}>  {records.map(ele => {
-              // console.log(ele.country)
-              let land = ele.country
-              return land
-            })}</option>
+            <option value="all">All</option>
+            {removeDuplicates().map(ele => (
+              <option value={ele.country}>{ele.country}</option>
+            ))}
+            
           </FormSelect>
         </Form>
       </>

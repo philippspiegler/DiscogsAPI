@@ -13,12 +13,12 @@ const darkTheme = useTheme()
 const toggleTheme = useThemeUpdate()
 const themeStyles = {
   backgroundColor: darkTheme ? '#333' : '#CCC',
-  color: darkTheme ? '#CCC' : '#333' 
+  color: darkTheme ? '#000' : '#333' 
 }
   
   return (
   <>
-    <button style={{marginBottom: '1em'}} onClick={toggleTheme}>toggle theme</button>
+    <button style={{marginBottom: '1em'}} onClick={toggleTheme}>{darkTheme ? 'switch to light' : 'switch to dark'}</button>
     
     <div style={themeStyles}>
     <Container>

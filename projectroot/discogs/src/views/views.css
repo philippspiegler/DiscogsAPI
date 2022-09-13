@@ -27,9 +27,12 @@ html, body {
     border-radius: 0%;
 }
 
+/* Register */
+
 .loginContainer {
     margin-top: 2em;
     background-color: rgb(160, 112, 167);
+    padding-bottom: 2em;
     
 }
 
@@ -37,7 +40,6 @@ html, body {
     display: flex;
     justify-content: center;
 }
-
 
 
 .loginForm {
@@ -66,8 +68,6 @@ html, body {
 .loginInput {
     margin-right: 1em;
     border-radius: 0%;
-    
-   
 }
 
 .link {

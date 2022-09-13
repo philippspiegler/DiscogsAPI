@@ -1,13 +1,35 @@
-import { ThemeContext } from '@emotion/react'
-import React, {useState, createContext, useContext} from 'react'
+import {useState, createContext} from 'react'
+import {auth} from '../config.js'
+import {createUserWithEmailAndPassword} from 'firebase/auth'
 
-const AuthContext = createContext()
+//create context/store
 
-export function AuthContextProvider(){
-    const [loggedIn, setLoggedIn] = useState(false)
+export const AuthContext = createContext()
 
- return(
-     <AuthContext.Provider value={loggedIn}></AuthContext.Provider>
- )
+//create provider
 
+export const AuthContextProvider = (props) => {
+    const [user, setUser] = useState(null)
+    
+    const registerNewUser = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+    // Signed in (creates new user with above credentials)
+    const user = userCredential.user;
+    console.log('user in AuthContext :>> ', user);
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log('error in AuthContext :>> ', error);
+    // ..
+  });
+    }
+
+    return (
+    <AuthContext.Provider value={{user, setUser, registerNewUser}}>
+        {props.children}
+    </AuthContext.Provider>
+    )
 }
