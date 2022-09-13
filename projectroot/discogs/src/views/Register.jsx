@@ -6,9 +6,11 @@ import {Link} from 'react-router-dom'
 import './views.css'
 
 const Register = () => {
+  
   const {registerNewUser} = useContext(AuthContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
   }
@@ -24,11 +26,13 @@ const Register = () => {
     <h3 className='loginTitle'>Register</h3>
     <Form className='form'>
             <Form.Group className="loginForm">
-                <Form.Control className='loginInput' type='text' placeholder='username' value={email} onChange={handleEmailChange}></Form.Control>
+                <Form.Control className='loginInput' type='email' placeholder='e-mail' value={email} onChange={handleEmailChange}></Form.Control>
                 <Form.Control className='loginInput' type='password' placeholder='password' value={password} onChange={handlePasswordChange}></Form.Control>
-                <Button className='btn btn-secondary loginButton' onChange={handleRegister}>Register</Button>
+                <Button className='btn btn-secondary loginButton' onClick={handleRegister}>Register</Button>
             </Form.Group>
         </Form>
+        <Form.Label htmlFor="loginLabel" className="loginLink">Already have an account?</Form.Label>
+        <Link className='loginLink' id="loginButton" to="/login">Login</Link>
     <Link className='homeLink' to="/">Home</Link>
     </Container>
   )

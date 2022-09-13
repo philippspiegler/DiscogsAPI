@@ -77,7 +77,30 @@ html, body {
     color: black;
 }
 
+.loginLink {
+    
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+    
+}
+
+
+
+.longinLabel {
+    display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+}
+
 .link:hover {
     color: gray;
+}
+
+.homeLink {
+    display: flex;
+    justify-content: left;
 }
 
