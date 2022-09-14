@@ -22,11 +22,11 @@ html, body {
 
 .navbar {
     background-color: rgb(160, 112, 167);
-    color: rgb(15, 15, 15);
+    color: #ffbb00;
     display: flex;
     justify-content: space-around;
 }
-
+s
 .searchInput {
    
     width: 50vw;

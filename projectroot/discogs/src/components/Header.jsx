@@ -13,11 +13,12 @@ const Header = () => {
   }
   return (
     <>
-    <Navbar> <div className='navbar'>Records API</div>
+    <Navbar> <div className='navbar' style={{color: '#ffbb00'}}>Records API</div>
     <Link className='link' to='/login'>Login</Link>
     <Link className='link' to='/register'>Register</Link>
+    <Link className='link' to='/chat'>Chat</Link>
     {user && <p>Welcome {user.email}</p>}
-    <button onClick={handleLogout}>Log out</button>
+    {user && <button onClick={handleLogout}>Log out</button>}
     </Navbar>
     </>
   )
