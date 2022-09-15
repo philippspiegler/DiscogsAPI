@@ -9,15 +9,16 @@ import Register from "./views/Register";
 import Chat from "./views/Chat";
 import { AuthContextProvider } from "./context/AuthContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import Home from "./views/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemeProvider>
+      {/* <ThemeProvider>
         <AuthContextProvider>
           <Routes>
-            <Route path="/" element={<App />}></Route>
+            <Route path="/" element={<Home />}></Route>
             <Route path="/display" element={<Display />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
@@ -27,7 +28,8 @@ root.render(
             <Route path="/redirect" element={<Navigate to="/" />}></Route>
           </Routes>
         </AuthContextProvider>
-      </ThemeProvider>
+      </ThemeProvider> */}
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );
