@@ -1,23 +1,23 @@
-import React, { useState, createContext, useContext } from "react"
+import React, { useState, createContext, useContext } from "react";
 
-const ThemeContext = createContext()
-const ThemeUpdateContext = createContext()
+const ThemeContext = createContext();
+const ThemeUpdateContext = createContext();
 
 // custom hooks
-export function useTheme(){
-  return useContext(ThemeContext)
+export function useTheme() {
+  return useContext(ThemeContext);
 }
 
-export function useThemeUpdate(){
-  return useContext(ThemeUpdateContext)
+export function useThemeUpdate() {
+  return useContext(ThemeUpdateContext);
 }
 
 export function ThemeProvider({ children }) {
-  const [darkTheme, setDarkTheme] = useState(false)
+  const [darkTheme, setDarkTheme] = useState(false);
 
   //updating theme toggle
   function toggleTheme() {
-    setDarkTheme(prevDarkTheme => !prevDarkTheme)
+    setDarkTheme((prevDarkTheme) => !prevDarkTheme);
   }
 
   return (
@@ -26,5 +26,5 @@ export function ThemeProvider({ children }) {
         {children}
       </ThemeUpdateContext.Provider>
     </ThemeContext.Provider>
-  )
-} 
+  );
+}

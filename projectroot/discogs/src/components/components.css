@@ -3,8 +3,9 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: 400;
-    background-color: white;
+    background-color: rgb(204, 204, 204);
 }
+
 
 /* Modal */
 
@@ -26,7 +27,7 @@ html, body {
     display: flex;
     justify-content: space-around;
 }
-s
+
 .searchInput {
    
     width: 50vw;
@@ -38,6 +39,7 @@ s
     
 }
 
+/* align button and search bar https://react-bootstrap.github.io/components/navbar/ */
 .searchButton {
     background-color: lightcoral;
     height: 52px;
@@ -99,6 +101,8 @@ s
     color: #000;
 }
 
+
+
 /* All Home Buttons in components folder */
 
 .homeLink {
@@ -141,13 +145,16 @@ s
     padding: 0.2em;
 }
 
+/* logout  */
+
+
 /* the select below navbar */
 
 .select-filter {
     width: 20vw;
     margin: auto;
     margin-top: 0.5em;
-    background-color: lightgray;
+    background-color: white;
     border: 2px solid lightslategray;
     margin-bottom: 2em;
 }

@@ -9,6 +9,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../config";
 import Header from "../components/Header";
+import { Button } from "react-bootstrap/";
 
 const Chat = () => {
   const { user, setUser, logout } = useContext(AuthContext);
@@ -67,19 +68,35 @@ const Chat = () => {
   return (
     <>
       <Header />
-
-      <div>
+      <div className="chat-message">
         {/* display text */}
         {textMessages &&
           textMessages.map((text) => (
-            <div style={{ backgroundColor: "lightgray" }}>
-              <p>{text.date.toString()}</p>
-              <p>{text.user}</p>
+            <div
+              className="chat-message__inner"
+              style={{
+                backgroundColor: "lightgray",
+                margin: "1em 0",
+                padding: "2em",
+                border: "2px solid #a070a7",
+              }}
+            >
+              <p>{text.user} said:</p>
               <p>{text.text}</p>
+              <p>on {text.date.toLocaleString()}</p>
             </div>
           ))}
-        <input type="text" value={message} onChange={handleMessageChange} />
-        <button onClick={sendMessage}>Send</button>
+        <div>
+          <input
+            className="chat-input"
+            type="text"
+            value={message}
+            onChange={handleMessageChange}
+          />
+          <Button className="send-button" onClick={sendMessage}>
+            Send
+          </Button>
+        </div>
       </div>
     </>
   );
