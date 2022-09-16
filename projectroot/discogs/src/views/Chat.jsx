@@ -9,7 +9,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../config";
 import Header from "../components/Header";
-import { Button } from "react-bootstrap/";
+import { Form, Button } from "react-bootstrap/";
 
 const Chat = () => {
   const { user, setUser, logout } = useContext(AuthContext);
@@ -20,12 +20,16 @@ const Chat = () => {
   const handleMessageChange = (e) => {
     setMessage(e.target.value);
   };
-
+  // console.log("text date", textMessages[0].date.seconds);
+  // const myDate = new Date(textMessages[0].date.seconds).toLocaleString();
+  // const transformDate = (date) => {
+  //   const myDate = new Date(date).toDateString();
+  // };
+  // console.log("myDate<<<<", myDate);
   const sendMessage = async () => {
     //message object to save in db
     const messageObj = {
       text: message,
-      date: new Date(),
       user: user.email,
     };
     console.log("messageObj :>> ", messageObj);
@@ -68,6 +72,21 @@ const Chat = () => {
   return (
     <>
       <Header />
+      <div>
+        <Form className="d-flex mt-3">
+          <Form.Control
+            style={{ width: "50vw", margin: "auto" }}
+            type="search"
+            placeholder="your message"
+            className="me-2"
+            aria-label="Search"
+            onChange={handleMessageChange}
+          />
+          <Button variant="success" onClick={sendMessage}>
+            Send
+          </Button>
+        </Form>
+      </div>
       <div className="chat-message">
         {/* display text */}
         {textMessages &&
@@ -82,21 +101,13 @@ const Chat = () => {
               }}
             >
               <p>{text.user} said:</p>
-              <p>{text.text}</p>
-              <p>on {text.date.toLocaleString()}</p>
+              <p>
+                <b>{text.text}</b>
+              </p>
+              {/* <p>on {text.date.toString()}</p>
+              <p>on {new Date(text.date.seconds).toLocaleString("de-DE")}</p> */}
             </div>
           ))}
-        <div>
-          <input
-            className="chat-input"
-            type="text"
-            value={message}
-            onChange={handleMessageChange}
-          />
-          <Button className="send-button" onClick={sendMessage}>
-            Send
-          </Button>
-        </div>
       </div>
     </>
   );

@@ -28,15 +28,12 @@ html, body {
     justify-content: space-around;
 }
 
-.searchInput {
-   
+.searchbar {
     width: 50vw;
     margin: auto;
-    display: inline-block;
-    background-color: #fff;
-    border-radius: 5%;
+    display: inline;
+    margin-right: 1em;
     border: 2px solid lightslategray;
-    
 }
 
 /* align button and search bar https://react-bootstrap.github.io/components/navbar/ */

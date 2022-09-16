@@ -33,10 +33,12 @@ const Header = () => {
         <Link className="link" to="/register">
           Register
         </Link>
-        <Link className="link" to="/chat">
-          Chat
-        </Link>
-        {user && <a>Welcome {user.email}</a>}
+        {user && (
+          <Link className="link" to="/chat">
+            Chat
+          </Link>
+        )}
+        {user && <span>Welcome {user.email}</span>}
         {user && (
           <Button
             onClick={handleLogout}

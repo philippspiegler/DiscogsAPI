@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Container, Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./views.css";
 
 const Login = () => {
-  const Redirect = useNavigate();
-  const { logIn } = useContext(AuthContext);
+  const { logIn, user } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -23,7 +21,8 @@ const Login = () => {
   const handleLogin = () => {
     logIn(email, password);
   };
-  <Route>{logIn ? <Redirect to="/display" /> : <Login />}</Route>;
+
+  // user ? redirect("/", { replace: true }) : redirect("/login");
 
   return (
     <>

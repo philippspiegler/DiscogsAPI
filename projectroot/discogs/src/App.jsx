@@ -1,9 +1,9 @@
-import React from "react";
+import React, { createContext } from "react";
 import "./App.css";
 import Fetch from "./Fetch";
 import Header from "./components/Header";
 
-import { AuthContextProvider } from "./context/AuthContext";
+import { AuthContext, AuthContextProvider } from "./context/AuthContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./views/Home";
@@ -12,8 +12,12 @@ import Login from "./views/Login";
 import Register from "./views/Register";
 import Details from "./components/Details";
 import Chat from "./views/Chat";
+import { useContext } from "react";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
+  const user = useContext(AuthContext);
+
   return (
     <div className="App">
       <ThemeProvider>
@@ -24,7 +28,15 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
             <Route path="/details/:item" element={<Details />}></Route>
-            <Route path="/chat" element={<Chat />}></Route>
+            {/* <Route path="/chat" element={<Chat />}></Route> */}
+            <Route
+              path="/chat"
+              element={
+                <ProtectedRoute>
+                  <Chat />
+                </ProtectedRoute>
+              }
+            ></Route>
             <Route path="*" element={<p>There's nothing here!</p>} />
             <Route path="/redirect" element={<Navigate to="/" />}></Route>
           </Routes>
