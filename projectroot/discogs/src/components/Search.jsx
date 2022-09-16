@@ -39,6 +39,7 @@ function Search({
               width: "50vw",
               marginLeft: "25vw",
               backgroundColor: "white",
+              border: "2px solid lightslategray",
             }}
             type="search"
             placeholder="record or artist"

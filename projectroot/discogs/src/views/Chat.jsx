@@ -75,7 +75,7 @@ const Chat = () => {
       <div>
         <Form className="d-flex mt-3">
           <Form.Control
-            style={{ width: "50vw", margin: "auto" }}
+            style={{ width: "50vw", marginLeft: "25vw" }}
             type="search"
             placeholder="your message"
             className="me-2"
@@ -94,7 +94,7 @@ const Chat = () => {
             <div
               className="chat-message__inner"
               style={{
-                backgroundColor: "lightgray",
+                backgroundColor: "#fff2bb",
                 margin: "1em 0",
                 padding: "2em",
                 border: "2px solid #a070a7",

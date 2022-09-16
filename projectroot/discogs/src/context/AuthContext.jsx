@@ -25,6 +25,7 @@ export const AuthContextProvider = (props) => {
         // Signed in (creates new user with above credentials)
         const user = userCredential.user;
         console.log("user in AuthContext Register :>> ", user);
+        redirect("/login");
       })
       .catch((error) => {
         const errorCode = error.code;

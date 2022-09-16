@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Container, Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./views.css";
 
@@ -21,8 +20,6 @@ const Login = () => {
   const handleLogin = () => {
     logIn(email, password);
   };
-
-  // user ? redirect("/", { replace: true }) : redirect("/login");
 
   return (
     <>

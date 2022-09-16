@@ -6,7 +6,7 @@ import { useTheme, useThemeUpdate } from "./context/ThemeContext";
 function Fetch() {
   const [records, setRecords] = useState([]);
   const [selected, setSelected] = useState("");
-  const [searchInput, setSearchInput] = useState("Wolfgang Petry");
+  const [searchInput, setSearchInput] = useState("Bad");
   const url = `https://api.discogs.com/database/search?q=${searchInput}&token=hDhYBDtJlXtHOWWJPjfSpwYKCHAJjlkHBJOxHlkf`;
   console.log(console.log("records in Fetch :>> ", records));
 

@@ -37,16 +37,7 @@ html, body {
 }
 
 /* align button and search bar https://react-bootstrap.github.io/components/navbar/ */
-.searchButton {
-    background-color: lightcoral;
-    height: 52px;
-    border-radius: 0%;
-    outline: none;
-}
 
-.searchButton:hover {
-    background-color: lightcoral;
-}
 
 .searchButton:focus {
     outline: none;
