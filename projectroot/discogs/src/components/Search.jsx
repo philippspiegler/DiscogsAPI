@@ -1,6 +1,6 @@
-import { Button } from "react-bootstrap";
-import { Form, FormSelect } from "react-bootstrap";
-import "./components.css";
+import { Button } from "react-bootstrap"
+import { Form, FormSelect } from "react-bootstrap"
+import "./components.css"
 
 function Search({
   handleSearch,
@@ -12,9 +12,9 @@ function Search({
 }) {
   // console.log('records :>> ', records);
   const removeDuplicates = () => {
-    const uniqueValues = records.filter((ele) => ele.country);
-    return uniqueValues;
-  };
+    const uniqueValues = records.filter((ele) => ele.country)
+    return uniqueValues
+  }
   return (
     <>
       {/* <Form>
@@ -49,11 +49,11 @@ function Search({
             value={searchInput}
           />
           <Button variant="success" onClick={fetchedData}>
-            Send
+            Search
           </Button>
         </Form>
       </div>
-
+      {/* 
       <Form>
         <FormSelect className="select-filter" onChange={(e) => handleSelect(e)}>
           <option value="all">All</option>
@@ -61,9 +61,9 @@ function Search({
             <option value={ele.country}>{ele.country}</option>
           ))}
         </FormSelect>
-      </Form>
+      </Form> */}
     </>
-  );
+  )
 }
 
-export default Search;
+export default Search
