@@ -11,27 +11,19 @@ function Search({
   selected,
 }) {
   // console.log('records :>> ', records);
+  const filterByCountry = () => {
+    const rec = records.filter((records) =>
+      records.title.includes({ searchInput })
+    )
+  }
+
   const removeDuplicates = () => {
     const uniqueValues = records.filter((ele) => ele.country)
     return uniqueValues
   }
+
   return (
     <>
-      {/* <Form>
-        <Form.Group className="m-3" controlId="formBasicEmail">
-          <Form.Control
-            style={{ backgroundColor: "white" }}
-            onChange={(e) => handleSearch(e)}
-            type="search"
-            placeholder="record or artist"
-            value={searchInput}
-          />
-          <Button variant="success" onClick={fetchedData}>
-            Search
-          </Button>
-        </Form.Group>
-      </Form> */}
-
       <div>
         <Form className="d-flex mt-3" controlId="formBasicEmail">
           <Form.Control
@@ -53,13 +45,10 @@ function Search({
           </Button>
         </Form>
       </div>
-      {/* 
-      <Form>
+
+      {/* <Form>
         <FormSelect className="select-filter" onChange={(e) => handleSelect(e)}>
-          <option value="all">All</option>
-          {removeDuplicates().map((ele) => (
-            <option value={ele.country}>{ele.country}</option>
-          ))}
+          <option value={searchInput}>{filterByCountry}</option>
         </FormSelect>
       </Form> */}
     </>

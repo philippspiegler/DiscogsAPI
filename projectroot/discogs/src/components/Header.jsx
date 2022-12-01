@@ -1,25 +1,26 @@
-import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/AuthContext";
-import { useContext } from "react";
-import { Button, FormGroup, FormControlLabel, Switch } from "@mui/material";
-import { useTheme, useThemeUpdate } from "../context/ThemeContext";
-import "./components.css";
+import React from "react"
+import Navbar from "react-bootstrap/Navbar"
+import { Link, useNavigate } from "react-router-dom"
+import { AuthContext } from "../context/AuthContext"
+import { useContext } from "react"
+import { Button, FormGroup, FormControlLabel, Switch } from "@mui/material"
+import { useTheme, useThemeUpdate } from "../context/ThemeContext"
+import "./components.css"
+import { NavDropdown } from "react-bootstrap"
 
 const Header = () => {
-  const { user, setUser, logout } = useContext(AuthContext);
-  const redirect = useNavigate();
+  const { user, setUser, logout } = useContext(AuthContext)
+  const redirect = useNavigate()
   const handleLogout = () => {
-    logout();
-  };
+    logout()
+  }
 
-  const darkTheme = useTheme();
-  const toggleTheme = useThemeUpdate();
+  const darkTheme = useTheme()
+  const toggleTheme = useThemeUpdate()
   const themeStyles = {
     backgroundColor: darkTheme ? "#333" : "#CCC",
     color: darkTheme ? "#000" : "#333",
-  };
+  }
 
   return (
     <>
@@ -60,7 +61,7 @@ const Header = () => {
         </FormGroup>
       </Navbar>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
